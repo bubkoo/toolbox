@@ -1,7 +1,3 @@
-# toolbox
-
-> dotfiles, scripts, etc.
-
 ## Install
 
 ```shell
