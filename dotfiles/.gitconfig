@@ -1,5 +1,9 @@
 [user]
-	email = bubkoo@163.com
-	name = bubkoo
+	email = bubkoo.wy@gmail.com
+	name  = bubkoo
 [push]
 	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

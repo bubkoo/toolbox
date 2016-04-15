@@ -57,6 +57,8 @@ export CLOUDENGINE_PATH=$CLOUDENGINE_HOME/bin
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 export M2_HOME=/usr/local/apache-maven/apache-maven-3.2.3
 export M2=$M2_HOME/bin
+export CAT_HOME=/usr/local/apache-tomcat/apache-tomcat-8.0.22
+export CAT_BIN=$CAT_HOME/bin
 export NODE_PATH=/usr/local/lib/node_modules
 export SHELL=zsh
 
@@ -81,6 +83,12 @@ alias cls='clear'
 # Autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
+source ~/perl5/perlbrew/etc/bashrc
 
 
 
+# added by travis gem
+[ -f /Users/Johnny/.travis/travis.sh ] && source /Users/Johnny/.travis/travis.sh
+
+export NVM_DIR="/Users/Johnny/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
