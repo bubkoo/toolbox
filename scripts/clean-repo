@@ -1,6 +1,6 @@
 #!/bin/bash
 
 echo
-echo    "  Clean 'node_modules' and 'coverage' ..."
+echo    "  Clean 'node_modules', 'coverage' and 'npm-debug.logo' ..."
 echo
-rimraf  **/node_modules  **/coverage
+rimraf  **/node_modules  **/coverage **/npm-debug.logo
