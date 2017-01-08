@@ -51,7 +51,9 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Exports
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export NVM_DIR=$HOME/.nvm
 # export CLOUDENGINE_HOME=/usr/local/cloudengine/cloudengine-3.2.4.1-ext
 # export CLOUDENGINE_PATH=$CLOUDENGINE_HOME/bin
 # export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
@@ -61,6 +63,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export CAT_BIN=$CAT_HOME/bin
 export NODE_PATH=/usr/local/lib/node_modules
 export SHELL=zsh
+
 
 LOCAL=/usr/local
 pathdirs=(
@@ -77,9 +80,11 @@ for dir in ${pathdirs[@]}; do
 done
 
 
-#alias
+# alias
 alias cls='clear'
 
-# Autojump
+# load autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
+# load nvm
+[ -s $NVM_DIR/nvm.sh ] && . $NVM_DIR/nvm.sh
