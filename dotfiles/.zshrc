@@ -45,22 +45,15 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump wd sudo)
+plugins=(git autojump wd sudo cname last-working-dir chucknorris)
 
 source $ZSH/oh-my-zsh.sh
 
 
 # Exports
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/anaconda2/bin:$PATH:$HOME/.cli
 export NVM_DIR=$HOME/.nvm
-# export CLOUDENGINE_HOME=/usr/local/cloudengine/cloudengine-3.2.4.1-ext
-# export CLOUDENGINE_PATH=$CLOUDENGINE_HOME/bin
-# export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
-# export M2_HOME=/usr/local/apache-maven/apache-maven-3.2.3
-# export M2=$M2_HOME/bin
-# export CAT_HOME=/usr/local/apache-tomcat/apache-tomcat-8.0.22
-# export CAT_BIN=$CAT_HOME/bin
 export NODE_PATH=/usr/local/lib/node_modules
 export SHELL=zsh
 
@@ -69,6 +62,7 @@ LOCAL=/usr/local
 pathdirs=(
     # $CLOUDENGINE_PATH
     # $M2
+    $HOME/Library/Python/2.7/bin
     $HOME/.scripts
     $LOCAL/sbin
     $LOCAL/share/npm/bin
@@ -88,3 +82,17 @@ alias cls='clear'
 
 # load nvm
 [ -s $NVM_DIR/nvm.sh ] && . $NVM_DIR/nvm.sh
+
+# added by travis gem
+[ -f /Users/bubkoo/.travis/travis.sh ] && source /Users/bubkoo/.travis/travis.sh
+
+# pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export PYENV_ROOT=/usr/local/var/pyenv
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
+# 小牛每日格言
+chuck_cow
